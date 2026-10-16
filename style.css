@@ -1665,3 +1665,191 @@ footer {
 footer {
   font-size: 12px;
 }
+
+/* V-next: unboxed partner logos, responsive image-first sponsor placements */
+.hero-partners .partner-grid { align-items:center; }
+.hero-partners .partner-slot, .collab-partners .collab-partner-slot {
+  background:transparent; border:0; box-shadow:none; padding:8px 12px;
+  min-width:0; min-height:86px; display:flex; align-items:center; justify-content:center;
+  transition:none;
+}
+.hero-partners .partner-slot:hover, .collab-partners .collab-partner-slot:hover {
+  background:transparent; border:0;
+}
+.partner-slot .shared-partner-logo, .collab-partner-slot .shared-partner-logo {
+  display:block; width:auto; height:auto; max-width:100%; max-height:78px;
+  object-fit:contain; transition:transform .25s ease,filter .25s ease;
+}
+.partner-slot:hover .shared-partner-logo, .collab-partner-slot:hover .shared-partner-logo {
+  transform:scale(1.045); filter:brightness(1.1);
+}
+.partner-slot:focus-visible, .collab-partner-slot:focus-visible, .setup-sponsor-slot:focus-visible {
+  outline:2px solid #d7a57b; outline-offset:4px;
+}
+.collab-partners .collab-partner-slot { min-height:92px; }
+.collab-partners .shared-partner-logo { max-height:82px; }
+.setup-sponsors { grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
+.setup-sponsor-slot {
+  position:relative; display:block; width:100%; min-width:0; min-height:0; padding:0;
+  aspect-ratio: 1.6 / 1; overflow:hidden; border:0; border-radius:5px;
+  background:#263c31; box-shadow:0 7px 20px #19282016;
+  transition:box-shadow .25s ease,transform .25s ease;
+}
+.setup-sponsor-slot .setup-sponsor-image {
+  display:block; width:100%; height:100%; max-width:none; max-height:none;
+  object-fit:cover; transition:transform .35s ease;
+}
+.setup-sponsor-slot:hover { background:#263c31; border:0; box-shadow:0 12px 28px #19282030; }
+.setup-sponsor-slot:hover .setup-sponsor-image { transform:scale(1.035); }
+@media(max-width:800px) {
+  .hero-partners .partner-slot { min-height:72px; padding:5px; }
+  .partner-slot .shared-partner-logo { max-height:62px; }
+  .setup-sponsors { gap:12px; }
+  .setup-sponsor-slot { min-height:0; padding:0; }
+}
+@media(max-width:540px) {
+  .hero-partners .partner-slot { min-height:64px; padding:4px; }
+  .partner-slot .shared-partner-logo { max-height:52px; }
+  .collab-partners .collab-partner-slot { min-height:80px; }
+  .setup-sponsors { grid-template-columns:1fr; gap:16px; }
+  .setup-sponsor-slot { aspect-ratio:1.6 / 1; min-height:0; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .shared-partner-logo, .setup-sponsor-image { transition:none!important; }
+}
+
+/* Featured ad images: shallow horizontal banners, keeping original column widths. */
+.gear-page .setup-sponsors {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-items: center;
+}
+.gear-page .setup-sponsor-slot {
+  width: 100%;
+  max-width: 350px;
+  height: 105px;
+  aspect-ratio: auto;
+}
+.gear-page .setup-sponsor-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 800px) {
+  .gear-page .setup-sponsor-slot { height: 100px; }
+}
+@media (max-width: 540px) {
+  .gear-page .setup-sponsors { grid-template-columns: 1fr; }
+  .gear-page .setup-sponsor-slot { max-width: 350px; height: 105px; }
+}
+
+
+/* Featured ads: match the ORIGINAL green sponsor box dimensions and layout. */
+.setup-sponsors { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; justify-items:stretch; }
+.setup-sponsor-slot { width:100%; max-width:none; height:165px; min-height:165px; aspect-ratio:auto; padding:0; }
+.setup-sponsor-slot .setup-sponsor-image { width:100%; height:100%; object-fit:cover; }
+@media (max-width:800px) {
+  .setup-sponsors { grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+  .setup-sponsor-slot { height:145px; min-height:145px; }
+}
+@media (max-width:480px) {
+  .setup-sponsors { grid-template-columns:1fr; gap:10px; }
+  .setup-sponsor-slot { height:105px; min-height:105px; }
+}
+
+/* FINAL: Featured ads match the product-category columns directly above. */
+.gear-page .setup-sponsors {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  justify-items: stretch;
+  width: 100%;
+}
+.gear-page .setup-sponsor-slot {
+  display: block;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  height: 165px;
+  min-height: 0;
+  aspect-ratio: auto;
+  padding: 0;
+}
+.gear-page .setup-sponsor-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 800px) {
+  .gear-page .setup-sponsors { grid-template-columns: 1fr; gap: 24px; }
+  .gear-page .setup-sponsor-slot { height: 165px; max-width: none; }
+}
+
+/* Requested final refinements — square advertising cards and in-image setup labels. */
+.gear-page .setup-sponsor-slot,
+.gear-page .setup-sponsor-image {
+  border-radius: 0;
+}
+.gear .gear-image {
+  height: 285px;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+}
+.gear .gear-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(12,25,19,.46) 0%, rgba(12,25,19,.05) 43%, rgba(12,25,19,.75) 100%);
+  pointer-events: none;
+}
+.gear .gear-overlay {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff;
+  text-shadow: 0 1px 8px rgba(0,0,0,.5);
+}
+.gear .gear-overlay-heading {
+  position: static;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 9px;
+  font: 800 clamp(13px, 1.35vw, 19px)/1.3 Manrope, sans-serif;
+  letter-spacing: .025em;
+  color: #fff;
+}
+.gear .gear-overlay-heading > span { position: static; font: inherit; color: inherit; }
+.gear .gear-overlay-heading .gear-overlay-number { font-size: inherit; letter-spacing: inherit; }
+.gear .gear-overlay-heading .gear-overlay-divider { opacity: .75; font-weight: 400; }
+.gear .gear-overlay-cta {
+  position: static;
+  align-self: flex-end;
+  font: 700 12px/1.4 'DM Sans', sans-serif;
+  letter-spacing: .04em;
+  color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,.8);
+  padding-bottom: 5px;
+}
+@media (max-width: 800px) {
+  .gear .gear-image { height: 315px; }
+  .gear .gear-overlay-heading { font-size: clamp(15px, 4vw, 20px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gear .gear-image { transition: none; }
+}
+
+/* Partner logos: a subtle 10% increase at rest, retaining the hover grow effect. */
+.hero-partners .shared-partner-logo,
+.collab-partners .shared-partner-logo {
+  transform: scale(1.10);
+}
+.hero-partners .partner-slot:hover .shared-partner-logo,
+.collab-partners .collab-partner-slot:hover .shared-partner-logo {
+  transform: scale(1.15);
+}
