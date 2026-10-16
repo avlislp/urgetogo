@@ -1662,3 +1662,6 @@ footer {
   }
   .nav nav .mobile-kofi:hover { color: #96724f; }
 }
+footer {
+  font-size: 12px;
+}
