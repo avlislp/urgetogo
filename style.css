@@ -1852,3 +1852,71 @@ footer {
 .collab-partners .collab-partner-slot:hover .shared-partner-logo {
   transform: scale(1.15);
 }
+
+/* Reusable inline discount label for setup product lists. */
+.setup-product-list .setup-discount-badge {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 5px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: #bb302c;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+/* Align product text and discount badge by their vertical centers, not baselines. */
+.setup-product-list li:has(> .setup-discount-badge) {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 7px;
+  row-gap: 3px;
+}
+.setup-product-list li > .setup-discount-badge {
+  margin-left: 0;
+  vertical-align: baseline; /* Flex alignment controls vertical position. */
+  flex: 0 0 auto;
+}
+
+/* Sticky discount announcement below the navigation */
+.motorcycle-promo-bar {
+  position: sticky;
+  top: 76px;
+  z-index: 29;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 38px;
+  padding: 9px 16px;
+  background: #a92e2b;
+  color: #fff;
+  text-align: center;
+  font: 400 12px/1.4 Manrope, sans-serif;
+  letter-spacing: .065em;
+}
+
+/* Extra-bold discount code */
+.motorcycle-promo-bar strong {
+  font-weight: 800;
+  font-size: 13px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 800px) {
+  .motorcycle-promo-bar {
+    top: 66px;
+    padding: 8px 12px;
+    font-size: 10px;
+    letter-spacing: .025em;
+  }
+
+  .motorcycle-promo-bar strong {
+    font-size: 11px;
+  }
+}
