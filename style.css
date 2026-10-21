@@ -1920,3 +1920,6 @@ footer {
     font-size: 11px;
   }
 }
+/* Homepage: swap background colors of section 02 (Setup) and 03 (Videos). */
+.gear.section { background: #e9e5d9; }
+.videos.section { background: var(--cream); }
