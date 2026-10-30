@@ -8,7 +8,7 @@
 // ============================================================
 const videoUrls = [
   'https://www.youtube.com/watch?v=zrg_s52mIR8', // My First Solo Motocamping Trip
-  'https://www.youtube.com/watch?v=Igkj-cG_csI', // Bikepacking through the Coast of Portugal
+  'https://www.youtube.com/watch?v=_SibIpTmHFc', // First Time on a CFMoto 675SR-R
   'https://www.youtube.com/watch?v=qmGFUfu8PQk', // Best Road in the World
 ];
 
