@@ -1882,6 +1882,23 @@ footer {
   flex: 0 0 auto;
 }
 
+/* Sticky discount announcement below the navigation */
+.motorcycle-promo-bar {
+  position: sticky;
+  top: 76px;
+  z-index: 29;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 38px;
+  padding: 9px 16px;
+  background: #a92e2b;
+  color: #fff;
+  text-align: center;
+  font: 400 12px/1.4 Manrope, sans-serif;
+  letter-spacing: .065em;
+}
+
 /* Extra-bold discount code */
 .motorcycle-promo-bar strong {
   font-weight: 800;
