@@ -1960,3 +1960,8 @@ footer {
   margin-left: -6px;
   margin-right: -6px;
 }
+
+/* Instagram purple */
+.nav nav a.nav-social[href*="instagram"] {
+  color: #a855a0;
+}
