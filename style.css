@@ -1953,3 +1953,10 @@ footer {
     justify-content: flex-start;
   }
 }
+
+/* Reduce spacing between all social icons */
+.nav nav .nav-social,
+.nav nav .nav-youtube {
+  margin-left: -6px;
+  margin-right: -6px;
+}
