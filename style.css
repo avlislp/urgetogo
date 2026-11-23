@@ -1923,3 +1923,33 @@ footer {
 /* Homepage: swap background colors of section 02 (Setup) and 03 (Videos). */
 .gear.section { background: #e9e5d9; }
 .videos.section { background: var(--cream); }
+
+/* Header social media icons — YouTube, Instagram and TikTok */
+.nav nav .nav-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  min-height: 27px;
+  padding: 0;
+  flex: none;
+  transition: color .2s;
+}
+
+.nav nav .nav-social svg {
+  display: block;
+  width: 19px;
+  height: 19px;
+  flex: none;
+}
+
+.nav nav .nav-social:hover {
+  color: var(--orange);
+}
+
+/* Keep social icons aligned with the YouTube icon on mobile. */
+@media (max-width: 800px) {
+  .nav nav .nav-social {
+    justify-content: flex-start;
+  }
+}
